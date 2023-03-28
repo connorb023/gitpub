@@ -16,10 +16,8 @@
 <body>
 	<h1>Welcome to gitPub</h1>
 	<ul>
-		<% for (let i = 0; i < drinks.length; i++) {
-			let name = drinks[i].name.charAt(0).toUpperCase() + drinks[i].name.slice(1);
-		%>
-			<li><%= name %> - $<%= drinks[i].price %></li>
+		<% for (let i = 0; i < drinks.length; i++) { %>
+			<li><a href="/drinks/<%= i %>"><%= drinks[i].name.charAt(0).toUpperCase() + drinks[i].name.slice(1) %> - $<%= drinks[i].price %></a></li>
 		<% } %>
 	</ul>
 </body>
