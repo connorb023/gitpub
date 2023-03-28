@@ -10,6 +10,12 @@ app.get('/drinks', (req, res) => {
   res.render('drinks_index', { drinks: drinks });
 });
 
+app.get('/drinks/:id', (req, res) => {
+    const drink = drinks[req.params.id];
+    drink.image += '.jpg'; // add .jpg to the end of the image link
+    res.render('drinks_show', { drink: drink });
+  });
+
 // start server
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
