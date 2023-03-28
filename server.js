@@ -1,19 +1,17 @@
-// Import the express module
 const express = require('express');
-const drinks = require('./models/drinks');
-
-// Create an instance of the express application
 const app = express();
-
-// Set the port number
 const port = 3000;
 
-// Listen on the specified port and log a message when the server is running
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+// require drinks data from drinks.js
+const drinks = require('./models/drinks');
+
+// set up route to render drinks_index.ejs
+app.get('/drinks', (req, res) => {
+  res.render('drinks_index', { drinks: drinks });
 });
 
-// Define a GET route for the homepage
-app.get('/drinks', (req, res) => {
-    res.send(drinks);
+// start server
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
+app.set('view engine', 'ejs');
