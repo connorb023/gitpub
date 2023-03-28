@@ -15,3 +15,8 @@ app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 app.set('view engine', 'ejs');
+
+app.get('/drinks/:id', (req, res) => {
+    res.send(req.params.id);
+  });
+  
