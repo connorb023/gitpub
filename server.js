@@ -1,5 +1,6 @@
 // Import the express module
 const express = require('express');
+const drinks = require('./models/drinks');
 
 // Create an instance of the express application
 const app = express();
@@ -13,6 +14,6 @@ app.listen(port, () => {
 });
 
 // Define a GET route for the homepage
-app.get('/', (req, res) => {
-  res.send('Welcome to the Gitpub App!');
+app.get('/drinks', (req, res) => {
+    res.send(drinks);
 });
