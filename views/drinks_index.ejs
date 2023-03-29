@@ -15,10 +15,18 @@
 </head>
 <body>
 	<h1>Welcome to gitPub</h1>
+	<h2>Drinks</h2>
 	<ul>
 		<% for (let i = 0; i < drinks.length; i++) { %>
-			<li><a href="/drinks/<%= i %>"><%= drinks[i].name.charAt(0).toUpperCase() + drinks[i].name.slice(1) %> - $<%= drinks[i].price %></a></li>
+			<li><a href="/drinks/<%= i %>"><%= drinks[i].name.charAt(0).toUpperCase() + drinks[i].name.slice(1) %></a></li>
 		<% } %>
 	</ul>
+	<h2>Foods</h2>
+<ul>
+  <% for (let i = 0; i < food.length; i++) { %>
+    <li><a href="/food/<%= i %>"><%= food[i].name %> </a></li>
+  <% } %>
+</ul>
+
 </body>
 </html>

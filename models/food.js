@@ -1,4 +1,3 @@
-
 const food = [
     {
       name: "(req, rEscargot)",
@@ -37,3 +36,4 @@ const food = [
     },
   ]
   module.exports = food;
+ 
